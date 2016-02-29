@@ -1,0 +1,5 @@
+//Creación de la BD
+CREATE DATABASE Shortener;
+
+//Creación de Tablas
+CREATE TABLE Websites (Website varchar(2100) NOT NULL, Shortcode varchar(15) PRIMARY KEY, Visits INT NOT NULL DEFAULT 0, FirstVisit DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, LastVisit DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP);
