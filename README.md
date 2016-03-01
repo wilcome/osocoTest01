@@ -1,7 +1,7 @@
 #OSOCO SHORTENER  
 ==============
 
-###OSOCO Enterprise challenge to get an interview with them. Make an URL shortener.
+#####OSOCO Enterprise challenge to get an interview with them. Make an URL shortener.
 
 This URL shortener is coded as a little groovy script. 
 * It implements FastCGI interface. 
@@ -9,7 +9,7 @@ This URL shortener is coded as a little groovy script.
 * Slf4j for logging.
 * MariaDB database to store the info. 
 
-###POSSIBLE TODOs: 
+#####Possible TODOs: 
 - [ ] Add memcache to improve it. 
 - [ ] Consider thread creations inside the script. 
 - [ ] Add cleaning entries task based on LastVisit column.
