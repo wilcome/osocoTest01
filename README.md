@@ -9,9 +9,9 @@ This shortener is coded as a little groovy script that implements FastCGI interf
 * MariaDB database to store the info. 
 
 #POSSIBLE TODOs: 
-[ ] Add memcache to improve it. 
-[ ] Consider thread creations inside the script. 
-[ ] Add cleaning entries task based on LastVisit column.
+- [ ] Add memcache to improve it. 
+- [ ] Consider thread creations inside the script. 
+- [ ] Add cleaning entries task based on LastVisit column.
     
 ## License
 
