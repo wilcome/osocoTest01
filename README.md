@@ -3,8 +3,9 @@
 
 ###OSOCO Enterprise challenge to get an interview with them. Make an URL shortener.
 
-This shortener is coded as a little groovy script that implements FastCGI interface. 
-* Lighttpd as web server.
+This URL shortener is coded as a little groovy script. 
+* It implements FastCGI interface. 
+* Lighttpd is used for web server.
 * Slf4j for logging.
 * MariaDB database to store the info. 
 
