@@ -134,12 +134,6 @@ class Shortener extends Script {
     def run() {
         log.info("Starting shortener process ...")
         def endPoint = 'http://ego.no-ip.org:7777'
-        def mariadbname = Class.forName("org.mariadb.jdbc.Driver")
-        log.info("mariadbname = " + mariadbname)
-        def sql=Sql.newInstance("endPointDB", "userDB", "passDB", "org.mariadb.jdbc.Driver")
-        sql.eachRow("select * from Websites"){
-            log.info("website = " + it.Website + ", code = " + it.Shortcode)
-        }
         def fcgi = new FCGIInterface()
         def writer // html is written here by markup builder
         def markup  // the builder
@@ -147,6 +141,7 @@ class Shortener extends Script {
         //After the first execution, this will be the scope of the script
         while(fcgi.FCGIaccept()>= 0) {
             try{
+                def sql=Sql.newInstance("jdbc:mysql://127.0.0.1/Shortener", "osoco", "passDB", "org.mariadb.jdbc.Driver")
                 log.info("Request number " + count + "..." )
                 count ++
                 writer = new StringWriter()  // html is written here by markup builder
@@ -215,6 +210,7 @@ class Shortener extends Script {
                         indexResponse()
                     }
                 }
+                sql.close()
             }catch(Exception e){
                 log.error("Error: " + e)
                 indexResponse(ErrorRespMsg.WRONG)
